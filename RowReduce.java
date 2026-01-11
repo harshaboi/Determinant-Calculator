@@ -1,6 +1,5 @@
 package Determinant_Calculator;
 
-import java.util.HashMap;
 import java.util.ArrayList;
 public class RowReduce {
     /**
@@ -10,7 +9,7 @@ public class RowReduce {
      * @return A HashMap that contains only one key-value pair where the key is the echelon form of the matrix
      * and the value is the number of row swaps that have been done while reducing to echelon form.
      */
-    public static HashMap<double[][], Integer> getEchelonForm(double[][] input) {
+    public static EchelonHolder getEchelonForm(double[][] input) {
         double[][] result = new double[input.length][input[0].length];
         for (int i = 0; i < input.length; i++) {
             for (int j = 0; j < input[0].length; j++) {
@@ -19,9 +18,7 @@ public class RowReduce {
         }
         int numSwaps = swapRowsForEchelon(result);
         numSwaps += reduceForEchelon(result);
-        HashMap<double[][], Integer> results = new HashMap<>();
-        results.put(result, numSwaps);
-        return results;
+        return new EchelonHolder(result, numSwaps);
     }
 
     /**

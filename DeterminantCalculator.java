@@ -1,8 +1,6 @@
 package Determinant_Calculator;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class DeterminantCalculator {
     /**
@@ -13,13 +11,9 @@ public class DeterminantCalculator {
      */
     public static Double getDeterminant(double[][] matrix) {
         if (matrix.length != matrix[0].length) return null; // Returns null if the given matrix is not square
-        HashMap<double[][], Integer> both = RowReduce.getEchelonForm(matrix);
-        double[][] result = new double[0][0];
-        int numSwaps = 0;
-        for (Map.Entry<double[][], Integer> entry : both.entrySet()) {
-            result = entry.getKey();
-            numSwaps = entry.getValue();
-        }
+        EchelonHolder e = RowReduce.getEchelonForm(matrix);
+        double[][] result = e.getEchelonForm();
+        int numSwaps = e.getNumSwaps();
         double product = 1;
         for (int i = 0; i < result.length; i++) {
             product *= result[i][i];
