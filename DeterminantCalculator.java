@@ -5,6 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DeterminantCalculator {
+    /**
+     * This method calculates the determinant of the given matrix.
+     *
+     * @param matrix the matrix whose determinant is being calculated.
+     * @return the determinant of the matrix.
+     */
     public static Double getDeterminant(double[][] matrix) {
         if (matrix.length != matrix[0].length) return null;
         HashMap<double[][], Integer> both = RowReduce.getEchelonForm(matrix);
