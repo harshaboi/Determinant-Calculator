@@ -8,7 +8,7 @@ public class RowReduce {
      *
      * @param input the given matrix
      * @return A HashMap that contains only one key-value pair where the key is the echelon form of the matrix
-     * and the Integer is the number of row swaps that have been done while reducing to echelon form.
+     * and the value is the number of row swaps that have been done while reducing to echelon form.
      */
     public static HashMap<double[][], Integer> getEchelonForm(double[][] input) {
         double[][] result = new double[input.length][input[0].length];
