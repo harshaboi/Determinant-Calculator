@@ -1,6 +1,5 @@
 package Determinant_Calculator;
 
-import java.util.ArrayList;
 public class RowReduce {
     /**
      * gets the echelon form of a given matrix
@@ -96,31 +95,31 @@ public class RowReduce {
         }
     }
     // Not necessary for my determinant calculator
-    private static void scaleRow(double[][] matrix, int rowInd, double factor) {
-        for (int i = 0; i < matrix[0].length; i++) {
-            matrix[rowInd][i] *= factor;
-        }
-    }
+    // private static void scaleRow(double[][] matrix, int rowInd, double factor) {
+    //     for (int i = 0; i < matrix[0].length; i++) {
+    //         matrix[rowInd][i] *= factor;
+    //     }
+    // }
     // Not necessary for my determinant calculator
-    private static void sortRow(double[][] result, int col) {
-        if (result[col][col] == 0) {
-            int row = col + 1;
-            boolean swapped = false;
-            while (row < result.length) {
-                if (result[row][0] != 0) {
-                    swapRow(result, col, row);
-                    swapped = true;
-                    break;
-                }
-                row++;
-            }
-            if (swapped) {
-                for (int j = 0; j < result.length; j++) {
-                    addToRow(result, row, j, -(result[j][0] / result[row][0]));
-                }
-            }
-        }
-    }
+    // private static void sortRow(double[][] result, int col) {
+    //     if (result[col][col] == 0) {
+    //         int row = col + 1;
+    //         boolean swapped = false;
+    //         while (row < result.length) {
+    //             if (result[row][0] != 0) {
+    //                 swapRow(result, col, row);
+    //                 swapped = true;
+    //                 break;
+    //             }
+    //             row++;
+    //         }
+    //         if (swapped) {
+    //             for (int j = 0; j < result.length; j++) {
+    //                 addToRow(result, row, j, -(result[j][0] / result[row][0]));
+    //             }
+    //         }
+    //     }
+    // }
 
     /**
      * Method that checks if a matrix is in echelon form.

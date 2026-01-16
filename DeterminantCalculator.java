@@ -1,7 +1,5 @@
 package Determinant_Calculator;
 
-import java.util.ArrayList;
-
 public class DeterminantCalculator {
     /**
      * This method calculates the determinant of the given matrix.
