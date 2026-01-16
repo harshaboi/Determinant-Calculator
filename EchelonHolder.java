@@ -1,3 +1,4 @@
+package Determinant_Calculator;
 // Class that is used to simplify the output for RowReduce's getEchelonForm method.
 public class EchelonHolder {
     private double[][] echelonForm;

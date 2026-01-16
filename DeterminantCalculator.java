@@ -10,7 +10,11 @@ public class DeterminantCalculator {
      * @return the determinant of the matrix.
      */
     public static Double getDeterminant(double[][] matrix) {
-        if (matrix.length != matrix[0].length) return null; // Returns null if the given matrix is not square
+        if (matrix.length == 2) {
+            return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+        } else if (matrix.length == 1) {
+            return matrix[0][0];
+        } else if (matrix.length != matrix[0].length) return null; // Returns null if the given matrix is not square
         EchelonHolder e = RowReduce.getEchelonForm(matrix);
         double[][] result = e.getEchelonForm();
         int numSwaps = e.getNumSwaps();
